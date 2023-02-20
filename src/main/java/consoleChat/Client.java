@@ -10,6 +10,8 @@ public class Client {
     Socket socket;
     String login;
 
+
+
     public Client() {
         String ip = "127.0.0.1";
         try {
@@ -24,9 +26,12 @@ public class Client {
         Resender resender = new Resender();
         resender.start();
         String textMessage = " ";
-        while (!(resender.message.equals(Constants.EXIT))){
+        while (!(textMessage.equals(Constants.EXIT))){
+           textMessage = new Scanner(System.in).nextLine();
+           out.println(textMessage);
 
         }
+        resender.setStoped();
 
     }
 
@@ -36,7 +41,7 @@ public class Client {
 
     public class Resender extends Thread {
         private boolean stoped;
-        String message;
+        String message = " ";
         public void setStoped() {
             this.stoped = true;
         }

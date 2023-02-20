@@ -32,6 +32,7 @@ public class Connection {
 
                     throw new RuntimeException(e);
                 }
+
             }
         });
 
@@ -53,5 +54,8 @@ public class Connection {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public String getLogin() {
+        return login;
     }
 }
